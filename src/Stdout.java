@@ -23,8 +23,16 @@ public class Stdout
      * @return a single instance of Stdout "instance".
      */
     
-    public static Stdout getInstance() { return instance; }
+    public static Stdout getInstance(){ return instance; }
+    
+     public static void main(String[] args){
+
+        Stdout.getInstance().printline("Shervin is gay");
+
+    }
     
     private static Stdout instance = new Stdout();
     
 }
+
+
