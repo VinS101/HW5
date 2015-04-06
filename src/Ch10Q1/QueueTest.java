@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
- * This class tests the queue 
- * 
+ * This class tests the LQueue 
+ * Main method goes here
  */
 public class QueueTest
 {

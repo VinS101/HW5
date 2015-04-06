@@ -4,7 +4,7 @@ package Ch10Q1;
 import java.util.Collection;
 
 /**
- *
+ * This is the interface given by the question
  * 
  * @param <E>
  */
