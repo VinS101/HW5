@@ -1,5 +1,6 @@
-package Ch7Q1;
+package Ch7Q2;
 
+import Ch7Q2.Pair;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;

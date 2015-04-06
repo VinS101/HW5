@@ -1,4 +1,4 @@
-package Ch7Q1;
+package Ch7Q2;
 
 import java.io.Serializable;
 import java.util.logging.Level;
@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  * @param <K> key
  * @param <V> value
  */
-public class Pair<K,V> implements Cloneable, Serializable 
+public class Pair<K,V> implements Cloneable, Serializable, Comparable<Pair>
 {
     Pair(K k, V v)
     {
@@ -43,7 +43,7 @@ public class Pair<K,V> implements Cloneable, Serializable
     @Override
     public String toString() 
     {
-        String result = "The String value of " + this.k.toString() + " is " + this.v.toString();
+        String result = "The Int value of " + this.k.toString() + " is " + this.v.toString();
         return result;
     }
 
@@ -76,6 +76,26 @@ public class Pair<K,V> implements Cloneable, Serializable
 
     private final K k;
     private final V v;
+
+   
+
+    @Override
+    public int compareTo(Pair t)
+    {
+        if(this.k.hashCode() == t.k.hashCode())
+        {
+            return 0;
+        }
+        else if(this.k.hashCode() > t.k.hashCode())
+        {
+            return 1;
+        }
+        
+        else
+        {
+            return -1;
+        }
+    }
 }
     
     
