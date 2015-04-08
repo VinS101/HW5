@@ -6,12 +6,13 @@ import java.util.logging.Logger;
 
 
 
+
 /**
  *Pair class to demonstrate generic data types
  * @param <K> key
  * @param <V> value
  */
-public class Pair<K,V> implements Cloneable, Serializable, Comparable<Pair>
+public class Pair<K extends Comparable<? super K>,V> implements Cloneable, Serializable, Comparable<Pair<K,V>>
 {
     Pair(K k, V v)
     {
@@ -77,25 +78,16 @@ public class Pair<K,V> implements Cloneable, Serializable, Comparable<Pair>
     private final K k;
     private final V v;
 
-   
-
+    /**
+     *
+     * @param t
+     * @return
+     */
     @Override
-    public int compareTo(Pair t)
+    public int compareTo(Pair<K,V> t)
     {
-        if(this.k.hashCode() == t.k.hashCode())
-        {
-            return 0;
-        }
-        else if(this.k.hashCode() > t.k.hashCode())
-        {
-            return 1;
-        }
-        
-        else
-        {
-            return -1;
-        }
-    }
+        return k.compareTo(t.k());
+    }    
 }
     
     
